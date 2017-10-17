@@ -1,0 +1,81 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+article.tweets {
+  position: relative;
+  margin: 2em;
+  border-radius: 5px;
+  border: 1px solid #d0d0d0;
+  background-color: #FFF;
+}
+
+article.tweets header {
+  padding-top:;
+  padding-right:;
+  padding-bottom:;
+  padding-left:;
+  margin: 0;
+  background-color: #eee;
+  display: flex;
+  flex-direction: row;
+
+}
+
+/*article.tweets header div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+
+}*/
+
+article.tweets header .image {
+  width: 100px;
+  height: 100px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+article.tweets header .name {
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-bottom:;
+  padding-left: 5px;
+  font-size: 250%;
+  font-weight: 700;
+  color: #244751;
+}
+
+article.tweets header .handle {
+  margin-left: auto;
+  padding-top: 25px;
+  padding-right: 10px;
+  padding-bottom:;
+  padding-left: 0px;
+  font-size: 115%;
+}
+
+article.tweets p {
+  min-height: 4em;
+  margin: 0;
+  padding-top: 35px;
+  padding-right: 20px;
+  padding-bottom: 35px;
+  padding-left: 20px;
+  font-size: 125%;
+}
+
+article.tweets footer {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-top: 1px solid #eee;
+}
