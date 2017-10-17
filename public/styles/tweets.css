@@ -8,9 +8,14 @@ html {
 article.tweets {
   position: relative;
   margin: 2em;
+  background-color: #FFF;
+}
+
+article.tweets div.each-tweet {
+  opacity: 0.8;
   border-radius: 5px;
   border: 1px solid #d0d0d0;
-  background-color: #FFF;
+  margin-bottom: 20px;
 }
 
 article.tweets header {
@@ -24,15 +29,6 @@ article.tweets header {
   flex-direction: row;
 
 }
-
-/*article.tweets header div {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-
-}*/
 
 article.tweets header .image {
   width: 100px;
@@ -60,6 +56,7 @@ article.tweets header .handle {
   padding-bottom:;
   padding-left: 0px;
   font-size: 115%;
+  color: #244751;
 }
 
 article.tweets p {
@@ -78,4 +75,5 @@ article.tweets footer {
   padding-bottom: 10px;
   padding-left: 10px;
   border-top: 1px solid #eee;
+  color: #244751;
 }
