@@ -18,6 +18,10 @@ article.tweets div.each-tweet {
   margin-bottom: 20px;
 }
 
+article.tweets div.each-tweet:hover {
+  opacity: 1.0;
+}
+
 article.tweets header {
   padding-top:;
   padding-right:;
@@ -76,4 +80,14 @@ article.tweets footer {
   padding-left: 10px;
   border-top: 1px solid #eee;
   color: #244751;
+  display: flex;
+  flex-direction: row;
+}
+
+article.tweets footer .days {
+
+}
+
+article.tweets footer .glyph-icons {
+  margin-left: auto;
 }
