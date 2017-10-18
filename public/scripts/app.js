@@ -78,15 +78,13 @@ function createTweetElement(tweet) {
   let tweetHTML = `
     <article class="each-tweet">
             <header>
-              <img class="image" src=${tweet.user.avatars.regular}>
-              <span class="name">${tweet.user.name}</span>
+              ${ $('<img class="image">').attr('src', tweet.user.avatars.regular).prop('outerHTML') }
+              ${ $('<span class="name">').text(tweet.user.name).prop('outerHTML') }
               <span class="handle">${tweet.user.handle}</span>
             </header>
-              <p>${tweet.content.text}</p>
+              ${ $('<p>').text(tweet.content.text).prop('outerHTML') }
             <footer>
-              <div class="days">
-                ${created(tweet.created_at)}
-              </div>
+              ${ $('<div class="days">').text(created(tweet.created_at)).prop('outerHTML') }
               <div class="glyph-icons">
                 <i class="fa fa-flag" aria-hidden="true"></i>
                 <i class="fa fa-retweet" aria-hidden="true"></i>
@@ -101,7 +99,17 @@ function createTweetElement(tweet) {
 
 $(document).ready(function() {
   renderTweets(data);
+  var form = $('.new-tweet form');
 
+  form.on('submit', function(event) {
+    event.preventDefault();
+
+    $.ajax({
+      url: '/tweets',
+      type: 'POST',
+      data: form.serialize()
+    });
+  })
 
 });
 
