@@ -5,24 +5,24 @@ html {
   box-sizing: inherit;
 }
 
-article.tweets {
+section.tweets {
   position: relative;
   margin: 2em;
   background-color: #FFF;
 }
 
-article.tweets div.each-tweet {
+section.tweets article.each-tweet {
   opacity: 0.8;
   border-radius: 5px;
   border: 1px solid #d0d0d0;
   margin-bottom: 20px;
 }
 
-article.tweets div.each-tweet:hover {
+section.tweets article.each-tweet:hover {
   opacity: 1.0;
 }
 
-article.tweets header {
+section.tweets header {
   padding-top:;
   padding-right:;
   padding-bottom:;
@@ -34,7 +34,7 @@ article.tweets header {
 
 }
 
-article.tweets header .image {
+section.tweets header .image {
   width: 100px;
   height: 100px;
   padding-top: 10px;
@@ -43,7 +43,7 @@ article.tweets header .image {
   padding-left: 10px;
 }
 
-article.tweets header .name {
+section.tweets header .name {
   padding-top: 15px;
   padding-right: 10px;
   padding-bottom:;
@@ -53,7 +53,7 @@ article.tweets header .name {
   color: #244751;
 }
 
-article.tweets header .handle {
+section.tweets header .handle {
   margin-left: auto;
   padding-top: 25px;
   padding-right: 10px;
@@ -63,7 +63,7 @@ article.tweets header .handle {
   color: #244751;
 }
 
-article.tweets p {
+section.tweets p {
   min-height: 4em;
   margin: 0;
   padding-top: 35px;
@@ -73,7 +73,7 @@ article.tweets p {
   font-size: 125%;
 }
 
-article.tweets footer {
+section.tweets footer {
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
@@ -84,10 +84,9 @@ article.tweets footer {
   flex-direction: row;
 }
 
-article.tweets footer .days {
-
+section.tweets footer .days {
 }
 
-article.tweets footer .glyph-icons {
+section.tweets footer .glyph-icons {
   margin-left: auto;
 }
