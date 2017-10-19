@@ -5,7 +5,7 @@ html {
   box-sizing: inherit;
 }
 
-section.tweets {
+.container section.tweets {
   position: relative;
   margin: 2em;
   background-color: #FFF;
