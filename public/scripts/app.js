@@ -14,17 +14,6 @@ const created = (date) => {
   }
 }
 
-function renderTweets(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  tweets.forEach(function(tweet) {
-      // takes return value and appends it to the tweets container
-    tweetElement = createTweetElement(tweet);
-    $('.tweets').append(tweetElement);
-  });
-  return;
-}
-
 function createTweetElement(tweet) {
   //var $tweet = $('<article>').addClass('each-tweet');
 
@@ -49,22 +38,20 @@ function createTweetElement(tweet) {
   return tweetHTML;
 }
 
+function renderTweets(tweets) {
+  // loops through tweets
+  // calls createTweetElement for each tweet
+  tweets.forEach(function(tweet) {
+      // takes return value and appends it to the tweets container
+    tweetElement = createTweetElement(tweet);
+    $('.tweets').append(tweetElement);
+  });
+  return;
+}
 
 $(document).ready(function() {
 
-  var form = $('.new-tweet form');
-  form.on('submit', function(event) {
-    event.preventDefault();
-
-    $.ajax({
-      url: '/tweets',
-      type: 'POST',
-      data: form.serialize()
-    });
-  })
-
   const loadTweets = () => {
-
     $.ajax({
       url: '/tweets',
       type: 'GET',
@@ -74,5 +61,20 @@ $(document).ready(function() {
     });
   }
   loadTweets();
+
+  var form = $('.new-tweet form');
+  form.on('submit', function(event) {
+    event.preventDefault();
+
+    $.ajax({
+      url: '/tweets',
+      type: 'POST',
+      data: form.serialize()
+    })
+    .then(() => {
+      $('.new-tweet textarea').val("");
+      loadTweets();
+    })
+  })
 });
 
