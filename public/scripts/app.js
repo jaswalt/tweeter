@@ -3,7 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
+$(document).ready(function() {
 
 const created = (date) => {
   let timeElapsed = Date.now() - date;
@@ -13,6 +13,31 @@ const created = (date) => {
     return Math.floor(timeElapsed / 1000000000) + " days ago";
   }
 }
+
+  var form = $('.new-tweet form');
+  form.on('submit', function(event) {
+    event.preventDefault();
+
+    if (!$('.new-tweet textarea').val()) {
+      $('.new-tweet .error').text("Error: No text inputed.");
+    } else if ($('.new-tweet .negCharset').length > 0) {
+      $('.new-tweet .error').text("Error: Too many characters.");
+    } else {
+      $.ajax({
+        url: '/tweets',
+        type: 'POST',
+        data: form.serialize()
+      })
+      .then(() => {
+        $('.new-tweet textarea').val("");
+        $('.new-tweet .counter').text("140");
+
+        loadTweets()
+        });
+      }
+      })
+
+
 
 function createTweetElement(tweet) {
   //var $tweet = $('<article>').addClass('each-tweet');
@@ -49,7 +74,6 @@ function renderTweets(tweets) {
   return;
 }
 
-$(document).ready(function() {
 
   const loadTweets = () => {
     $.ajax({
@@ -62,19 +86,6 @@ $(document).ready(function() {
   }
   loadTweets();
 
-  var form = $('.new-tweet form');
-  form.on('submit', function(event) {
-    event.preventDefault();
+})
 
-    $.ajax({
-      url: '/tweets',
-      type: 'POST',
-      data: form.serialize()
-    })
-    .then(() => {
-      $('.new-tweet textarea').val("");
-      loadTweets();
-    })
-  })
-});
 

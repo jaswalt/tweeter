@@ -10,6 +10,7 @@ $(document).ready(function() {
       counter.addClass('negCharset');
     } else {
       counter.removeClass('negCharset');
+      $('.new-tweet .error').text("");
     }
   });
 });
