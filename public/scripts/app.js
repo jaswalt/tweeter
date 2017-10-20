@@ -57,19 +57,13 @@ $(document).ready(function() {
 
 
 
-// Hide New Tweet
+// Hide new-tweet
   $('.new-tweet').hide();
 
-// Compose Tweet form appears when Compose button clicked
+// Compose button shows and hides new-tweet
   $('#compose').click(function() {
-    $('.new-tweet').slideDown();
-    $('.new-tweet textarea').focus();
+    $('.new-tweet').slideToggle();
   });
-
-// Autoselect text area
-
-
-// Compose Tweet form disappears when Tweet successfully posted
 
 
   var form = $('.new-tweet form');
@@ -90,7 +84,6 @@ $(document).ready(function() {
         $('.new-tweet textarea').val("");
         $('.new-tweet .counter').text("140");
 
-        $('.new-tweet').slideUp();
         loadTweets()
       });
     }
@@ -99,5 +92,3 @@ $(document).ready(function() {
   loadTweets();
 
 });
-
-
