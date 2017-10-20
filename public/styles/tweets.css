@@ -89,6 +89,6 @@ section.tweets footer .glyph-icons {
   display: none;
 }
 
-section.tweets footer div.glyph-icons:hover {
+section.tweets article.each-tweet:hover .glyph-icons {
   display: block;
 }
