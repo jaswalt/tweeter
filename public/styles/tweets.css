@@ -86,4 +86,9 @@ section.tweets footer .days {
 
 section.tweets footer .glyph-icons {
   margin-left: auto;
+  display: none;
+}
+
+section.tweets footer div.glyph-icons:hover {
+  display: block;
 }
