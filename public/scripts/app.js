@@ -61,6 +61,7 @@ $(document).ready(function() {
   // Compose button shows and hides new-tweet
   $('#compose').click(function() {
     $('.new-tweet').slideToggle();
+    $('.new-tweet textarea').focus();
   });
 
   const form = $('.new-tweet form');
