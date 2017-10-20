@@ -16,4 +16,3 @@ Tweeter is a simple, single-page Twitter clone.
 - Chance
 - MD5
 - MongoDB
-- Moment
