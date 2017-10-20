@@ -14,6 +14,21 @@ const created = (date) => {
   }
 }
 
+// Hide New Tweet
+  $('.new-tweet').hide();
+
+// Compose Tweet form appears when Compose button clicked
+  $('#compose').click(function() {
+    $('.new-tweet').slideDown();
+    $('.new-tweet textarea').focus();
+  });
+
+// Autoselect text area
+
+
+// Compose Tweet form disappears when Tweet successfully posted
+
+
   var form = $('.new-tweet form');
   form.on('submit', function(event) {
     event.preventDefault();
@@ -32,6 +47,7 @@ const created = (date) => {
         $('.new-tweet textarea').val("");
         $('.new-tweet .counter').text("140");
 
+        $('.new-tweet').slideUp();
         loadTweets()
         });
       }
